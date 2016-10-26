@@ -96,6 +96,10 @@ FructermanReingold::FructermanReingold(int width, int height, std::vector<Edge> 
     this->weigh_attractive_force = false;
     this->weigh_repulsive_force = false;
     this->verbose = 0;
+
+    for(std::vector<Edge>::iterator edge_it = edge_list.begin(); edge_it != edge_list.end(); ++edge_it){
+        this->addEdge(edge_it->source, edge_it->target, edge_it->weight, bidirectional);
+    }
 }
 
 void FructermanReingold::addEdge(int64_t source, int64_t target, float weight, bool bidirectional) {
